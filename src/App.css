@@ -1,0 +1,83 @@
+/* App.css */
+body {
+  background-color: #cef0b1;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+}
+
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1rem 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(31, 22, 22, 0.1);
+  display: flex;
+  flex-direction:column;
+  
+  width: 300px;
+  margin: 2rem auto;
+}
+
+div {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  flex-direction: column;
+  color: #400303;
+  
+}
+
+input, select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #f5eeee;
+}
+
+span {
+  color: rgb(114, 102, 102);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #0a1727;
+  color: white;
+
+};
