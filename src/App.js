@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-//import EventRegistrationForm from './eventregistrationform';
-import Form from "./components/Form";
+import Form from './components/form';
+
 
 
 function App() {
   return (
     <div className="App">
       
-          <Form/>
+      <Form/>
         </div>
   );
 }

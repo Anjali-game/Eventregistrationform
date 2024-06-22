@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+// Ensure you have this file for styling
 
 const Form = () => {
     const [formdata, setFormdata] = useState({
         name: "",
         email: "",
         age: "",
-        attendingwithguest: "",
+        attendingwithguest: "No",
         guestname: ""
     });
 
@@ -26,7 +27,7 @@ const Form = () => {
             tempErrors.age = 'Age must be greater than 0';
         }
         if (formdata.attendingwithguest === 'Yes' && !formdata.guestname) {
-            tempErrors.guestname = 'Guest Name is required'; // Corrected key to match the input field name
+            tempErrors.guestname = 'Guest Name is required';
         }
 
         setErrors(tempErrors);
@@ -49,45 +50,47 @@ const Form = () => {
     };
 
     return (
-        
-        <div>
-            <h1 > Event Registration Form </h1>
+        <div className="form-container">
+            <h1>Event Registration Form</h1>
             {!submitted ? (
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className="form-group">
                         <label>Name:</label>
                         <input
                             type="text"
                             name="name"
                             value={formdata.name}
                             onChange={handleChange}
+                            className={errors.name ? 'input-error' : ''}
                         />
                         {errors.name && <span>{errors.name}</span>}
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Email:</label>
                         <input
                             type="email"
                             name="email"
                             value={formdata.email}
                             onChange={handleChange}
+                            className={errors.email ? 'input-error' : ''}
                         />
                         {errors.email && <span>{errors.email}</span>}
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Age:</label>
                         <input
                             type="number"
                             name="age"
                             value={formdata.age}
                             onChange={handleChange}
+                            className={errors.age ? 'input-error' : ''}
                         />
                         {errors.age && <span>{errors.age}</span>}
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Are you attending with a guest?</label>
                         <select
-                            name="attendingwithguest" // Corrected the name to match the formdata key
+                            name="attendingwithguest"
                             value={formdata.attendingwithguest}
                             onChange={handleChange}
                         >
@@ -96,26 +99,27 @@ const Form = () => {
                         </select>
                     </div>
                     {formdata.attendingwithguest === 'Yes' && (
-                        <div>
+                        <div className="form-group">
                             <label>Guest Name:</label>
                             <input
                                 type="text"
-                                name="guestname" // Corrected the name to match the formdata key
+                                name="guestname"
                                 value={formdata.guestname}
                                 onChange={handleChange}
+                                className={errors.guestname ? 'input-error' : ''}
                             />
-                            {errors.guestname && <span>{errors.guestname}</span>} {/* Corrected key to match the error key */}
+                            {errors.guestname && <span>{errors.guestname}</span>}
                         </div>
                     )}
                     <button type="submit">Submit</button>
                 </form>
             ) : (
-                <div>
+                <div className="form-summary">
                     <h2>Form Submitted</h2>
                     <p>Name: {formdata.name}</p>
                     <p>Email: {formdata.email}</p>
                     <p>Age: {formdata.age}</p>
-                    <p>Attending with guest: {formdata.attendingwithguest}</p> {/* Corrected key to match the formdata key */}
+                    <p>Attending with guest: {formdata.attendingwithguest}</p>
                     {formdata.attendingwithguest === 'Yes' && (
                         <p>Guest Name: {formdata.guestname}</p>
                     )}
